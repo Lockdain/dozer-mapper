@@ -14,7 +14,6 @@ public class ClientPhoneToPhoneConverter extends DozerConverter<Double, Double> 
     }
 
     public Double convertTo(Double source, Double destination) {
-        String parameter = getParameter();
         if (getParameter().equals("PHONE")) {
             if (source == 0) {
                 return 123D;
