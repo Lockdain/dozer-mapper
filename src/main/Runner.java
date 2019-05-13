@@ -32,9 +32,7 @@ public class Runner {
         }
 
         DozerBeanMapper mapper = (DozerBeanMapper) dozerBeanMapperFactoryBean.getObject();
-
         AddressSource addrType = getAddressType();
-
         AddressTarget destAddr = mapper.map(addrType, AddressTarget.class);
 
         // Convert address type to address domain

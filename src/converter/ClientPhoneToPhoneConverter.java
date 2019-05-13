@@ -16,6 +16,7 @@ public class ClientPhoneToPhoneConverter extends DozerConverter<Double, Double> 
     public Double convertTo(Double source, Double destination) {
         if (getParameter().equals("PHONE")) {
             if (source == 0) {
+                System.out.println("Phone number is 0!");
                 return 123D;
             }
         }
