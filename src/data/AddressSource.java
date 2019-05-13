@@ -5,14 +5,23 @@ import lombok.ToString;
  * Source POJO
  */
 @ToString
-public class AddressType {
+public class AddressSource {
 
     private String addreLine1;
     private String city;
     private String state;
     private int zipCode;
+    private Client client;
 
-    public AddressType() {
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public AddressSource() {
     }
 
     public String getAddreLine1() {

@@ -6,14 +6,32 @@ import lombok.ToString;
  * Destination POJO
  */
 @ToString
-public class Address {
+public class AddressTarget {
 
     private String addrLine1;
     private String city;
     private String state;
     private int zip5;
+    private Client client;
+    private double phone;
 
-    public Address() {
+    public double getPhone() {
+        return phone;
+    }
+
+    public void setPhone(double phone) {
+        this.phone = phone;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public AddressTarget() {
     }
 
     public String getAddrLine1() {

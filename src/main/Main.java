@@ -1,7 +1,8 @@
 package main;
 
-import data.Address;
-import data.AddressType;
+import data.AddressTarget;
+import data.AddressSource;
+import data.Client;
 import org.dozer.DozerBeanMapper;
 
 import java.util.ArrayList;
@@ -14,24 +15,31 @@ public class Main {
         myMappingFiles.add("dozermapper.xml");
         mapper.setMappingFiles(myMappingFiles);
 
-        AddressType addrType = getAddressType();
+        AddressSource addrType = getAddressType();
 
-        Address destAddr = mapper.map(addrType, Address.class);
+        AddressTarget destAddr = mapper.map(addrType, AddressTarget.class);
 
         // Convert address type to address domain
-        System.out.println("AddressType==>Address: " + destAddr.toString());
+        System.out.println("AddressSource ==> AddressTarget: " + destAddr.toString());
 
-        // Convert Address domain to Address type
-        AddressType destAddrType = mapper.map(destAddr, AddressType.class);
-        System.out.println("Address==>AddressType: " + destAddrType.toString());
+        // Convert AddressTarget domain to AddressTarget type
+        AddressSource destAddrType = mapper.map(destAddr, AddressSource.class);
+        System.out.println("AddressTarget ==> AddressSource: " + destAddrType.toString());
     }
 
-    private static AddressType getAddressType() {
-        AddressType addrType = new AddressType();
+    private static AddressSource getAddressType() {
+        Client client = new Client();
+        client.setName("John");
+        client.setSurname("Doe");
+        client.setPhone(12345676);
+
+        AddressSource addrType = new AddressSource();
         addrType.setAddreLine1("121 Howard Lane");
         addrType.setCity("Orlando");
         addrType.setState("Florida");
         addrType.setZipCode(32050);
+        addrType.setClient(client);
+
         return addrType;
     }
 }

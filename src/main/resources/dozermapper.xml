@@ -4,16 +4,20 @@
           xsi:schemaLocation="http://dozer.sourceforge.net
           http://dozer.sourceforge.net/schema/beanmapping.xsd">
     <mapping type="one-way">
-        <class-a>data.AddressType</class-a>
-        <class-b>data.Address</class-b>
+        <class-a>data.AddressSource</class-a>
+        <class-b>data.AddressTarget</class-b>
         <field custom-converter="converter.StringToCodeConverter"  custom-converter-param="STATE">
             <a>state</a>
             <b>state</b>
         </field>
+        <field>
+            <a>Client.phone</a>
+            <b>phone</b>
+        </field>
     </mapping>
     <mapping type="one-way">
-        <class-a>data.Address</class-a>
-        <class-b>data.AddressType</class-b>
+        <class-a>data.AddressTarget</class-a>
+        <class-b>data.AddressSource</class-b>
         <field custom-converter="converter.CodeToStringConverter" custom-converter-param="STATE">
             <a>state</a>
             <b>state</b>
