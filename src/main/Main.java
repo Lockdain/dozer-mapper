@@ -31,7 +31,7 @@ public class Main {
         Client client = new Client();
         client.setName("John");
         client.setSurname("Doe");
-        client.setPhone(12345676);
+        client.setPhone(0);
 
         AddressSource addrType = new AddressSource();
         addrType.setAddreLine1("121 Howard Lane");

@@ -10,7 +10,7 @@
             <a>state</a>
             <b>state</b>
         </field>
-        <field>
+        <field custom-converter="converter.ClientPhoneToPhoneConverter" custom-converter-param="PHONE">
             <a>Client.phone</a>
             <b>phone</b>
         </field>
